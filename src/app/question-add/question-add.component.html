@@ -1,0 +1,61 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add Question</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #form="ngForm" class="question-form">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Question</mat-label>
+          <textarea
+            class="question-container"
+            cdkTextareaAutosize
+            name="question"
+            required
+            matInput
+            [(ngModel)]="question"
+          ></textarea>
+          <mat-error>Question is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Answer</mat-label>
+          <textarea
+            class="answer-container"
+            cdkTextareaAutosize
+            name="answer"
+            matInput
+            [(ngModel)]="answer"
+          ></textarea>
+        </mat-form-field>
+        <input
+          (change)="onFileChange($event)"
+          name="image"
+          accept="image/*"
+          #image
+          type="file"
+          multiple
+          hidden
+        />
+        <div class="button-container">
+          <button (click)="formSubmit()" color="primary" mat-raised-button>
+            Submit
+          </button>
+          <button
+            class="upload"
+            color="primary"
+            mat-raised-button
+            (click)="image.click()"
+          >
+            Upload Images
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #submittedSuccessfully>
+  <mat-dialog-content>
+    Question Submitted Successfully
+  </mat-dialog-content>
+</ng-template>

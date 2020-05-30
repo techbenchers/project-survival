@@ -1,0 +1,26 @@
+.title {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.toolbar {
+  /*position: absolute;*/
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+mat-toolbar {
+  background-color: #202124 !important;
+}

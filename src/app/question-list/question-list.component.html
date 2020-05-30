@@ -1,0 +1,19 @@
+<!-- <mat-selection-list [multiple]="false">
+  <mat-list-option
+    [ngClass]="question.answered === 0 ? 'not-answered' : 'answered'"
+    (click)="optionClicked(question)"
+    *ngFor="let question of questions"
+  >
+    {{ trimQuestion(question.question) }}
+  </mat-list-option>
+</mat-selection-list> -->
+
+<mat-card *ngFor="let question of questions" (click)="optionClicked(question)">
+  <div>
+    <mat-icon *ngIf="question.answered" [ngClass]="'answered'">check</mat-icon>
+    <mat-icon *ngIf="!question.answered" [ngClass]="'not-answered'">clear</mat-icon>
+  </div>
+  <mat-card-content>
+    {{ trimQuestion(question.question) }}
+  </mat-card-content>
+</mat-card>

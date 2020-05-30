@@ -1,0 +1,43 @@
+.all-answer-container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.question {
+  margin-top: 1rem;
+}
+
+mat-card {
+  margin-top: 1rem !important;
+}
+
+.upload {
+  margin-left: 1rem;
+}
+
+.answer-container {
+  height: 35vh !important;
+}
+
+.full-width {
+  width: 70vw;
+}
+
+p {
+  margin: 0 16px !important;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.answer-title div {
+  margin: 0px !important;
+}
+
+.submit,
+.upload {
+  background-color: #202124 !important;
+}
+
+img {
+  width: 100%;
+}

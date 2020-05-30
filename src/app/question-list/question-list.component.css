@@ -1,0 +1,26 @@
+.container {
+  /*margin-top: 90px;*/
+  height: 100%;
+}
+
+.answered {
+  color: green !important;
+}
+
+.not-answered {
+  color: red !important;
+}
+
+mat-card {
+  margin-top: 1rem !important;
+  display: flex;
+}
+
+mat-icon {
+  height: 100%;
+}
+
+mat-card-content {
+  flex-grow: 1;
+  padding-left: 0.5rem;
+}

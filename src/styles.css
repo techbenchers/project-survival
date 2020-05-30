@@ -1,0 +1,44 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*,
+*:focus,
+*:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+app-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mat-input-element {
+  caret-color: #202124;
+}
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #202124 !important;
+}
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #202124 !important;
+}
+.mat-raised-button.mat-primary {
+  background-color: #202124 !important;
+}

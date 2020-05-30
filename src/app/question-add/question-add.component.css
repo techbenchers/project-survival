@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /*min-width: 150px;*/
+  /*max-width: 500px;*/
+  /*width: 100%;*/
+}
+
+.full-width {
+  width: 70vw;
+}
+
+.answer-container {
+  height: 35vh !important;
+}
+
+.question-container {
+  height: 15vh !important;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+.upload {
+  margin-left: 1rem;
+}

@@ -1,0 +1,71 @@
+<div class="all-answer-container">
+  <div class="btn-container">
+    <button mat-raised-button (click)="openAnswerDialog()">
+      Upload Answer for this Question
+    </button>
+  </div>
+  <div class="question">
+    <h1>Q. {{ question?.question }}</h1>
+  </div>
+  <div class="answer">
+    <mat-card *ngFor="let answer of answers; let i = index">
+      <mat-card-header class="answer-title">
+        <mat-card-title>Answer {{ i + 1 }}:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p *ngIf="!isImage(answer.answer)">{{ answer.answer }}</p>
+        <ng-template
+          [ngIf]="isImage(answer.answer)"
+          *ngFor="let i of splitComma(answer.answer)"
+        >
+          <img [src]="i" />
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #answerDialog>
+  <h2 matDialogTitle>Answer</h2>
+  <mat-dialog-content>
+    <form #form="ngForm" class="question-form">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Answer</mat-label>
+        <textarea
+          class="answer-container"
+          cdkTextareaAutosize
+          name="answer"
+          matInput
+          [(ngModel)]="answerTxt"
+        ></textarea>
+      </mat-form-field>
+      <input
+        (change)="onFileChange($event)"
+        name="image"
+        accept="image/*"
+        #image
+        type="file"
+        multiple
+        hidden
+      />
+      <div class="button-container">
+        <button
+          class="submit"
+          (click)="formSubmit()"
+          color="primary"
+          mat-raised-button
+        >
+          Submit
+        </button>
+        <button
+          class="upload"
+          color="primary"
+          mat-raised-button
+          (click)="image.click()"
+        >
+          Upload Images
+        </button>
+      </div>
+    </form>
+  </mat-dialog-content>
+</ng-template>
